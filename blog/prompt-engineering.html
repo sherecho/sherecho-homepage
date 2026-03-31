@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prompt Engineering 进阶：让大模型稳定输出结构化数据 — sherecho</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">shere<span>cho</span></a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="../index.html">首页</a></li>
+        <li><a href="../about.html">关于</a></li>
+        <li><a href="../blog.html" class="active">博客</a></li>
+        <li><a href="../index.html#projects">项目</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle" aria-label="菜单">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="container">
+    <article class="post-article fade-in">
+
+      <a href="../blog.html" class="post-back">← 返回博客列表</a>
+
+      <div class="post-meta">
+        <span class="post-date">2026-02-22</span>
+        <span class="post-read-time">9 min read</span>
+      </div>
+
+      <div class="post-category">📁 <a href="../blog.html?category=AI%20%E6%8A%80%E6%9C%AF">AI 技术</a></div>
+
+      <h1 class="post-title">Prompt Engineering 进阶：让大模型稳定输出结构化数据</h1>
+
+      <div class="post-tags"><span class="tag">Prompt</span></div>
+
+      <div class="post-body">
+<p>在构建 AI Agent 和自动化工作流时，一个核心挑战是让 LLM <strong>稳定、可靠地输出结构化数据</strong>。不像聊天场景中自由的文本输出，生产环境需要的是可解析、可验证的 JSON / XML / YAML。</p>
+
+<h2>问题是什么？</h2>
+
+<p>即使你在 Prompt 中明确要求「请输出 JSON 格式」，LLM 仍然可能：</p>
+
+<ul><li>在 JSON 前后加上解释性文字</li></ul>
+<ul><li>使用单引号而非双引号</li></ul>
+<ul><li>漏掉必需字段或添加多余字段</li></ul>
+<ul><li>生成截断的 JSON（被 max_tokens 截断）</li></ul>
+
+<h2>策略一：System Prompt 约束</h2>
+
+<p>在 System Message 中明确格式要求，这是最基础也最有效的方法。</p>
+
+<h2>策略二：Few-Shot 示例</h2>
+
+<p>提供 2-3 个输入输出的完整示例，让模型理解预期格式。</p>
+
+<h2>策略三：使用结构化输出 API</h2>
+
+<p>主流模型提供商都已经支持原生的结构化输出能力：</p>
+
+<ul><li><strong>OpenAI</strong>：使用 <code>response_format: { type: "json_schema" }</code></li></ul>
+<ul><li><strong>Anthropic</strong>：使用 Tool Use 模拟结构化输出</li></ul>
+<ul><li><strong>Google</strong>：使用 JSON mode 或 constrained decoding</li></ul>
+
+<p>这些原生方案通过约束解码（Constrained Decoding）从模型层面保证输出的合法性，比纯 Prompt 约束可靠得多。</p>
+
+<h2>策略四：后处理与重试</h2>
+
+<p>即使做了以上所有优化，仍然建议添加后处理层：</p>
+
+<ul><li><strong>JSON 解析验证</strong>：尝试解析，失败则提取 JSON 部分重试</li></ul>
+<ul><li><strong>Schema 验证</strong>：使用 Pydantic / Zod 验证数据结构</li></ul>
+<ul><li><strong>自动重试</strong>：解析失败时重新调用 LLM，最多重试 2-3 次</li></ul>
+
+<h2>总结</h2>
+
+<p>让 LLM 稳定输出结构化数据需要多层保障：System Prompt 设定预期 → Few-Shot 示例示范 → 原生 API 约束 → 后处理兜底。四管齐下，才能在生产环境中达到 99%+ 的成功率。</p>
+      </div>
+
+      <div class="post-nav">
+        <a href="mcp-protocol.html" class="post-nav-link prev"><span class="post-nav-label">← 上一篇</span>MCP 协议深度解析：AI Agent 的「USB 接口」</a>
+        <a href="feishu-bot.html" class="post-nav-link next"><span class="post-nav-label">下一篇 →</span>飞书 Bot 开发实战：从零搭建一个智能工作流</a>
+      </div>
+
+      <div class="post-footer">
+        <p>如果你觉得这篇文章有帮助，欢迎在 <a href="https://github.com/sherecho" target="_blank" rel="noopener">GitHub</a> 与我交流！</p>
+      </div>
+
+    </article>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <p>© 2026 sherecho. Built with ❤️ and AI.</p>
+        <div class="footer-links">
+          <a href="https://github.com/sherecho" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://x.com/sherecho" target="_blank" rel="noopener">Twitter</a>
+          <a href="mailto:hello@sherecho.dev">Email</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const navToggle = document.getElementById('navToggle');
+    const navLinks  = document.getElementById('navLinks');
+    navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+
+    // Ensure fade-in elements become visible
+    setTimeout(() => {
+      document.querySelectorAll('.fade-in:not(.visible)').forEach(el => el.classList.add('visible'));
+    }, 150);
+  </script>
+
+</body>
+</html>

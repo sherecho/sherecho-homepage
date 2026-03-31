@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>sherecho — Builder & AI Explorer</title>
+  <meta name="description" content="sherecho 的个人主页 — AI Agent 开发者、技术探索者">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- ========== Navigation ========== -->
+  <nav class="navbar">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">shere<span>cho</span></a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="/" class="active">首页</a></li>
+        <li><a href="about.html">关于</a></li>
+        <li><a href="blog.html">博客</a></li>
+        <li><a href="#projects">项目</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle" aria-label="菜单">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ========== Hero ========== -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content fade-in">
+        <div class="hero-badge">
+          <span class="dot"></span>
+          Open to collaborate
+        </div>
+        <h1>
+          你好，我是 <span class="gradient">sherecho</span><br>
+          用代码构建，以 AI 思考
+        </h1>
+        <p>
+          AI Agent 开发者 & 技术探索者。专注于多智能体协作架构、自动化工作流，以及用 AI 放大人类创造力的可能性。
+        </p>
+        <div class="hero-actions">
+          <a href="blog.html" class="btn btn-primary">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 20h9M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+            阅读博客
+          </a>
+          <a href="#projects" class="btn btn-outline">
+            查看项目
+            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 17l9.2-9.2M17 17V7.8H7.8"/></svg>
+          </a>
+        </div>
+        <div class="social-row">
+          <a href="https://github.com/sherecho" class="social-link" target="_blank" rel="noopener" title="GitHub">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+          </a>
+          <a href="https://x.com/sherecho" class="social-link" target="_blank" rel="noopener" title="X / Twitter">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+          <a href="mailto:hello@sherecho.dev" class="social-link" title="Email">
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 4L12 13 2 4"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== Stats ========== -->
+  <section style="padding-top:0;">
+    <div class="container">
+      <div class="stats-row fade-in">
+        <div class="stat-item">
+          <div class="stat-number">3+</div>
+          <div class="stat-label">年技术探索经验</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">10+</div>
+          <div class="stat-label">开源项目 / Agent 技能</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">50+</div>
+          <div class="stat-label">技术文章 & 笔记</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">∞</div>
+          <div class="stat-label">好奇心与热情</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== About ========== -->
+  <section id="about">
+    <div class="container">
+      <div class="section-header fade-in">
+        <div class="label">关于我</div>
+        <h2>探索者，构建者，学习者</h2>
+      </div>
+      <div class="about-grid fade-in">
+        <div class="about-text">
+          <p>
+            我是一名热爱技术的探索者，专注于 AI Agent 生态和多智能体协作系统。
+            从大语言模型的 Prompt Engineering 到复杂的 Multi-Agent 编排架构，
+            我享受将前沿 AI 能力转化为实际可用的工具和工作流。
+          </p>
+          <p>
+            我相信技术的价值在于解决真实问题。无论是自动化日常繁琐任务，
+            还是构建智能助手提升团队效率，我始终追求「能用 → 好用 → 易用」的递进。
+            目前正在探索 AI 驱动的个人知识管理系统和 Vibe Coding 最佳实践。
+          </p>
+          <p>
+            工作之余，我喜欢写技术博客、在社区分享经验，
+            并通过开源项目连接志同道合的伙伴。
+          </p>
+        </div>
+        <div class="tech-stacks">
+          <div class="tech-stack-group">
+            <h3>语言 & 框架</h3>
+            <div class="tags">
+              <span class="tag">Python</span>
+              <span class="tag">TypeScript</span>
+              <span class="tag">JavaScript</span>
+              <span class="tag">React</span>
+              <span class="tag">Next.js</span>
+              <span class="tag">Node.js</span>
+            </div>
+          </div>
+          <div class="tech-stack-group">
+            <h3>AI & Agent</h3>
+            <div class="tags">
+              <span class="tag">LLM</span>
+              <span class="tag">LangChain</span>
+              <span class="tag">RAG</span>
+              <span class="tag">MCP</span>
+              <span class="tag">Prompt Engineering</span>
+              <span class="tag">Multi-Agent</span>
+            </div>
+          </div>
+          <div class="tech-stack-group">
+            <h3>工具 & 平台</h3>
+            <div class="tags">
+              <span class="tag">Git</span>
+              <span class="tag">Docker</span>
+              <span class="tag">飞书</span>
+              <span class="tag">Cursor</span>
+              <span class="tag">Claude</span>
+              <span class="tag">GPT</span>
+            </div>
+          </div>
+          <div class="tech-stack-group">
+            <h3>兴趣领域</h3>
+            <div class="tags">
+              <span class="tag">Vibe Coding</span>
+              <span class="tag">个人知识管理</span>
+              <span class="tag">自动化工作流</span>
+              <span class="tag">开源协作</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== Blog Posts ========== -->
+  <section id="blog">
+    <div class="container">
+      <div class="section-header fade-in">
+        <div class="label">最新文章</div>
+        <h2>技术思考与实践记录</h2>
+        <p>关于 AI Agent、开发效率提升和技术探索的原创内容</p>
+      </div>
+      <div class="cards-grid fade-in">
+
+        <article class="card">
+          <div class="card-icon cyan">🤖</div>
+          <div class="card-date">2026-03-31</div>
+          <h3 class="card-title"><a href="blog/test-hexo-like.html">测试文章：验证类 Hexo 博客功能</a> <span class="featured-badge">⭐</span></h3>
+          <p class="card-excerpt">
+            这是一篇测试文章，用于验证博客系统的类 Hexo 功能是否正常工作。 功能验证清单 分类功能：本文属于「开发日志」分类。 标签功能：本文包含「测试」和「Hexo」两个标签。 精选功能：本文标记为精选文章（featured: true）。…
+          </p>
+          <div class="card-tags">
+            <span class="tag">测试</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-icon green">⚡</div>
+          <div class="card-date">2026-03-25</div>
+          <h3 class="card-title"><a href="blog/multi-agent-architecture.html">多 Agent 协作架构设计：从概念到落地</a></h3>
+          <p class="card-excerpt">
+            在 AI 应用开发中，单体 Agent 模式（一个 LLM 处理所有任务）在简单场景下表现不错，但随着任务复杂度提升，我们很快会遇到瓶颈。多 Agent 协作架构应运而生——它让不同角色的 Agent 各司其职、协同工作，从而解决更复杂的问题。…
+          </p>
+          <div class="card-tags">
+            <span class="tag">AI Agent</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-icon blue">🧠</div>
+          <div class="card-date">2026-03-18</div>
+          <h3 class="card-title"><a href="blog/vibe-coding.html">Vibe Coding：AI 时代的全新编程范式</a></h3>
+          <p class="card-excerpt">
+            Andrej Karpathy 在 2025 年初提出了「Vibe Coding」这个概念：你只需要描述你想要什么，AI 就能帮你把代码写出来。这不是遥不可及的科幻场景——而是正在发生的现实。…
+          </p>
+          <div class="card-tags">
+            <span class="tag">Vibe Coding</span>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== Projects ========== -->
+  <section id="projects">
+    <div class="container">
+      <div class="section-header fade-in">
+        <div class="label">项目展示</div>
+        <h2>从想法到产品的探索</h2>
+        <p>精选开源项目和个人作品</p>
+      </div>
+      <div class="cards-grid fade-in">
+
+        <div class="card project-card">
+          <div class="card-header">
+            <div class="project-icon">🐙</div>
+            <div class="project-name"><a href="#">Agent Ready Template</a></div>
+          </div>
+          <p class="project-desc">
+            一站式 AI Agent 开发脚手架。预置了 MCP 工具集成、记忆管理、多模型支持和任务编排能力，让你能在 5 分钟内启动一个生产级 Agent 项目。
+          </p>
+          <div class="project-tech">
+            <span class="tag">Python</span>
+            <span class="tag">LangGraph</span>
+            <span class="tag">MCP</span>
+            <span class="tag">Docker</span>
+          </div>
+          <div class="project-links">
+            <a href="#">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+              GitHub
+            </a>
+            <a href="#">
+              <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71"/></svg>
+              Demo
+            </a>
+          </div>
+        </div>
+
+        <div class="card project-card">
+          <div class="card-header">
+            <div class="project-icon">🎨</div>
+            <div class="project-name"><a href="#">AI-DrawIO</a></div>
+          </div>
+          <p class="project-desc">
+            用自然语言生成 Draw.io / Mermaid 图表的 AI 工具。支持架构图、流程图、时序图等多种图表类型，大幅降低文档和设计中的图表制作成本。
+          </p>
+          <div class="project-tech">
+            <span class="tag">TypeScript</span>
+            <span class="tag">LLM</span>
+            <span class="tag">Draw.io</span>
+            <span class="tag">Mermaid</span>
+          </div>
+          <div class="project-links">
+            <a href="#">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+              GitHub
+            </a>
+            <a href="#">
+              <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71"/></svg>
+              Demo
+            </a>
+          </div>
+        </div>
+
+        <div class="card project-card">
+          <div class="card-header">
+            <div class="project-icon">📝</div>
+            <div class="project-name"><a href="#">智能笔记助手</a></div>
+          </div>
+          <p class="project-desc">
+            基于飞书开放平台构建的智能笔记 Agent，支持自动整理会议纪要、生成摘要、提取 Action Items，并自动同步到任务管理系统。
+          </p>
+          <div class="project-tech">
+            <span class="tag">Python</span>
+            <span class="tag">飞书 API</span>
+            <span class="tag">GPT</span>
+            <span class="tag">Agent</span>
+          </div>
+          <div class="project-links">
+            <a href="#">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+              GitHub
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== Footer ========== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <p>© 2026 sherecho. Built with ❤️ and AI.</p>
+        <div class="footer-links">
+          <a href="https://github.com/sherecho" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://x.com/sherecho" target="_blank" rel="noopener">Twitter</a>
+          <a href="mailto:hello@sherecho.dev">Email</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========== Scripts ========== -->
+  <script>
+    // Mobile nav toggle
+    const navToggle = document.getElementById('navToggle');
+    const navLinks  = document.getElementById('navLinks');
+    navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+
+    // Scroll fade-in animation
+    const observer = new IntersectionObserver(
+      (entries) => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }),
+      { threshold: 0.1 }
+    );
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    // Fallback: ensure all fade-in elements become visible after short delay
+    setTimeout(() => {
+      document.querySelectorAll('.fade-in:not(.visible)').forEach(el => el.classList.add('visible'));
+    }, 150);
+  </script>
+
+</body>
+</html>

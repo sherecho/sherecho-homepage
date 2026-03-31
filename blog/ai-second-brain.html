@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>用 AI 构建第二大脑：个人知识管理系统实践 — sherecho</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">shere<span>cho</span></a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="../index.html">首页</a></li>
+        <li><a href="../about.html">关于</a></li>
+        <li><a href="../blog.html" class="active">博客</a></li>
+        <li><a href="../index.html#projects">项目</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle" aria-label="菜单">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="container">
+    <article class="post-article fade-in">
+
+      <a href="../blog.html" class="post-back">← 返回博客列表</a>
+
+      <div class="post-meta">
+        <span class="post-date">2026-03-10</span>
+        <span class="post-read-time">10 min read</span>
+      </div>
+
+      <div class="post-category">📁 <a href="../blog.html?category=%E6%95%88%E7%8E%87%E5%B7%A5%E5%85%B7">效率工具</a></div>
+
+      <h1 class="post-title">用 AI 构建第二大脑：个人知识管理系统实践</h1>
+
+      <div class="post-tags"><span class="tag">知识管理</span></div>
+
+      <div class="post-body">
+<p>你有没有这样的体验：明明之前读过一篇很有用的文章、记过一条重要的笔记，但需要用到的时候怎么也找不到？这正是因为我们的「第一大脑」——人类大脑——天生不擅长精确检索。</p>
+
+<p>解决方案是构建一个「第二大脑」——一个外部的、结构化的知识存储系统。而 AI 的加入，让这个系统从「被动存储」进化为「主动理解」。</p>
+
+<h2>传统知识管理的痛点</h2>
+
+<p>我试过 Notion、Obsidian、Roam Research 等各种笔记工具。它们各有优势，但都有一个共同的问题：<strong>你记得的东西才能找到，不记得的就像从未存在过</strong>。</p>
+
+<p>具体来说：</p>
+
+<ul><li>关键词搜索太僵硬，语义搜索能力缺失</li></ul>
+<ul><li>手动分类和维护标签系统成本极高</li></ul>
+<ul><li>笔记之间的关联需要手动建立，很难规模化</li></ul>
+
+<h2>AI 驱动的知识管理系统架构</h2>
+
+<p>我构建的系统分为三层：</p>
+
+<strong>第一层：信息采集</strong>
+
+<p>自动化收集信息来源——浏览器书签、RSS 订阅、聊天记录、截图等。使用轻量级脚本定期抓取和清洗数据。</p>
+
+<strong>第二层：智能处理</strong>
+
+<p>这是 AI 发挥核心价值的地方：</p>
+
+<ul><li><strong>自动摘要</strong>：LLM 为每条信息生成摘要和关键标签</li></ul>
+<ul><li><strong>语义嵌入</strong>：使用 Embedding 模型将文本转换为向量</li></ul>
+<ul><li><strong>智能分类</strong>：基于语义相似度自动归档</li></ul>
+
+<strong>第三层：语义检索</strong>
+
+<p>使用 RAG（Retrieval-Augmented Generation）技术，将用户的自然语言查询转换为向量，在向量数据库中找到最相关的知识片段，然后让 LLM 基于这些片段生成回答。</p>
+
+<h2>技术选型</h2>
+
+<ul><li><strong>向量数据库</strong>：ChromaDB（轻量级，适合个人使用）</li></ul>
+<ul><li><strong>Embedding 模型</strong>：text-embedding-3-small（性价比高）</li></ul>
+<ul><li><strong>LLM</strong>：GPT-4o-mini（摘要和问答）</li></ul>
+<ul><li><strong>存储</strong>：本地 Markdown 文件 + SQLite 元数据</li></ul>
+
+<h2>实际效果</h2>
+
+<p>使用这套系统三个月后，我的知识检索效率提升了约 3 倍。过去需要翻 10 分钟的笔记，现在通过自然语言提问 30 秒就能定位到相关内容。更重要的是，系统经常能关联起我遗忘的知识点，产生意想不到的启发。</p>
+
+<h2>下一步计划</h2>
+
+<ul><li>接入飞书文档，实现工作知识的自动化同步</li></ul>
+<ul><li>添加「知识图谱」可视化，直观展示知识点之间的关联</li></ul>
+<ul><li>支持多模态输入（图片、音频转文字后入库）</li></ul>
+
+<h2>总结</h2>
+
+<p>AI 不会替你思考和记忆，但它可以成为你记忆的索引和思维的催化剂。构建第二大脑的本质不是囤积信息，而是建立一个能让你「站在已有知识肩膀上」的系统。</p>
+      </div>
+
+      <div class="post-nav">
+        <a href="feishu-bot.html" class="post-nav-link prev"><span class="post-nav-label">← 上一篇</span>飞书 Bot 开发实战：从零搭建一个智能工作流</a>
+        <a href="vibe-coding.html" class="post-nav-link next"><span class="post-nav-label">下一篇 →</span>Vibe Coding：AI 时代的全新编程范式</a>
+      </div>
+
+      <div class="post-footer">
+        <p>如果你觉得这篇文章有帮助，欢迎在 <a href="https://github.com/sherecho" target="_blank" rel="noopener">GitHub</a> 与我交流！</p>
+      </div>
+
+    </article>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <p>© 2026 sherecho. Built with ❤️ and AI.</p>
+        <div class="footer-links">
+          <a href="https://github.com/sherecho" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://x.com/sherecho" target="_blank" rel="noopener">Twitter</a>
+          <a href="mailto:hello@sherecho.dev">Email</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const navToggle = document.getElementById('navToggle');
+    const navLinks  = document.getElementById('navLinks');
+    navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+
+    // Ensure fade-in elements become visible
+    setTimeout(() => {
+      document.querySelectorAll('.fade-in:not(.visible)').forEach(el => el.classList.add('visible'));
+    }, 150);
+  </script>
+
+</body>
+</html>

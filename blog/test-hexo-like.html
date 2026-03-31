@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>测试文章：验证类 Hexo 博客功能 — sherecho</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">shere<span>cho</span></a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="../index.html">首页</a></li>
+        <li><a href="../about.html">关于</a></li>
+        <li><a href="../blog.html" class="active">博客</a></li>
+        <li><a href="../index.html#projects">项目</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle" aria-label="菜单">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="container">
+    <article class="post-article fade-in">
+
+      <a href="../blog.html" class="post-back">← 返回博客列表</a>
+
+      <div class="post-meta">
+        <span class="post-date">2026-03-31</span>
+        <span class="post-read-time">3 min read</span>
+      </div>
+
+      <div class="post-category">📁 <a href="../blog.html?category=%E5%BC%80%E5%8F%91%E6%97%A5%E5%BF%97">开发日志</a></div>
+
+      <h1 class="post-title">测试文章：验证类 Hexo 博客功能</h1>
+
+      <div class="post-tags"><span class="tag">测试</span></div>
+
+      <div class="post-body">
+<p>这是一篇测试文章，用于验证博客系统的类 Hexo 功能是否正常工作。</p>
+
+<h2>功能验证清单</h2>
+
+<strong>分类功能</strong>：本文属于「开发日志」分类。
+
+<strong>标签功能</strong>：本文包含「测试」和「Hexo」两个标签。
+
+<strong>精选功能</strong>：本文标记为精选文章（featured: true）。
+
+<strong>摘要功能</strong>：下面这行之后的内容在列表页中不会显示。
+
+<p>这里是摘要之后的内容，只有在文章详情页才能看到。</p>
+
+<h3>更多测试内容</h3>
+
+<ul><li>Markdown 列表渲染</li></ul>
+<ul><li><strong>加粗文字</strong> 和 <em>斜体文字</em></li></ul>
+<ul><li><code>行内代码</code> 展示</li></ul>
+
+<blockquote>这是一段引用文字，测试 blockquote 渲染。</blockquote>
+
+<h3>代码块测试</h3>
+
+<pre><code>function hello() {
+  console.log(&quot;Hello, Hexo-like blog!&quot;);
+<p>}</code></pre></p>
+
+<hr>
+
+<p>如果你能看到这篇文章的完整内容，说明所有功能都运行正常！</p>
+      </div>
+
+      <div class="post-nav">
+        <a href="multi-agent-architecture.html" class="post-nav-link prev"><span class="post-nav-label">← 上一篇</span>多 Agent 协作架构设计：从概念到落地</a>
+        <span class="post-nav-link next disabled"><span class="post-nav-label">下一篇 →</span>已是最新</span>
+      </div>
+
+      <div class="post-footer">
+        <p>如果你觉得这篇文章有帮助，欢迎在 <a href="https://github.com/sherecho" target="_blank" rel="noopener">GitHub</a> 与我交流！</p>
+      </div>
+
+    </article>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <p>© 2026 sherecho. Built with ❤️ and AI.</p>
+        <div class="footer-links">
+          <a href="https://github.com/sherecho" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://x.com/sherecho" target="_blank" rel="noopener">Twitter</a>
+          <a href="mailto:hello@sherecho.dev">Email</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const navToggle = document.getElementById('navToggle');
+    const navLinks  = document.getElementById('navLinks');
+    navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+
+    // Ensure fade-in elements become visible
+    setTimeout(() => {
+      document.querySelectorAll('.fade-in:not(.visible)').forEach(el => el.classList.add('visible'));
+    }, 150);
+  </script>
+
+</body>
+</html>

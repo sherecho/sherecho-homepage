@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>博客 — sherecho</title>
+  <meta name="description" content="sherecho 的技术博客 — AI Agent、开发效率、技术探索">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">shere<span>cho</span></a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">首页</a></li>
+        <li><a href="about.html">关于</a></li>
+        <li><a href="blog.html" class="active">博客</a></li>
+        <li><a href="archive.html">归档</a></li>
+        <li><a href="index.html#projects">项目</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle" aria-label="菜单">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="page-header fade-in">
+      <div class="label" style="font-size:.8rem;font-weight:600;color:var(--accent);text-transform:uppercase;letter-spacing:.08em;margin-bottom:12px;">博客</div>
+      <h1>技术思考与实践记录</h1>
+      <p>关于 AI Agent、开发效率提升和技术探索的原创内容，记录每一步成长。</p>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="fade-in" style="margin-bottom:16px;">
+      <div style="font-size:.78rem;color:var(--text-muted);margin-bottom:8px;font-weight:600;">📂 分类</div>
+      <div class="category-filter">
+        <button class="category-filter-btn active" data-category="all">全部</button>
+        <button class="category-filter-btn" data-category="AI 技术">AI 技术</button>
+        <button class="category-filter-btn" data-category="年度总结">年度总结</button>
+        <button class="category-filter-btn" data-category="开发实战">开发实战</button>
+        <button class="category-filter-btn" data-category="开发实践">开发实践</button>
+        <button class="category-filter-btn" data-category="开发日志">开发日志</button>
+        <button class="category-filter-btn" data-category="效率工具">效率工具</button>
+      </div>
+    </div>
+    <div class="tag-filter fade-in">
+      <div style="font-size:.78rem;color:var(--text-muted);margin-bottom:8px;font-weight:600;">🏷️ 标签</div>
+      <button class="tag-filter-btn active" data-tag="all">全部</button>
+        <button class="tag-filter-btn" data-tag="AI Agent">AI Agent</button>
+        <button class="tag-filter-btn" data-tag="MCP">MCP</button>
+        <button class="tag-filter-btn" data-tag="Prompt">Prompt</button>
+        <button class="tag-filter-btn" data-tag="Vibe Coding">Vibe Coding</button>
+        <button class="tag-filter-btn" data-tag="年度总结">年度总结</button>
+        <button class="tag-filter-btn" data-tag="测试">测试</button>
+        <button class="tag-filter-btn" data-tag="知识管理">知识管理</button>
+        <button class="tag-filter-btn" data-tag="飞书">飞书</button>
+    </div>
+  </div>
+
+  <section class="blog-list">
+    <div class="container" id="blogList">
+
+      <article class="blog-item fade-in featured" data-tags="测试" data-category="开发日志">
+        <div class="blog-item-category">开发日志</div>
+        <div class="blog-item-date">2026-03-31</div>
+        <div class="blog-item-content">
+          <h2><a href="blog/test-hexo-like.html">测试文章：验证类 Hexo 博客功能</a><span class="featured-badge">⭐ 精选</span></h2>
+          <p>这是一篇测试文章，用于验证博客系统的类 Hexo 功能是否正常工作。 功能验证清单 分类功能：本文属于「开发日志」分类。 标签功能：本文包含「测试」和「Hexo」两个标签。 精选功能：本文标记为精选文章（featured: true）。…</p>
+          <div class="card-tags">
+            <span class="tag">测试</span>
+            <span class="tag">3 min read</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="blog-item fade-in" data-tags="AI Agent" data-category="AI 技术">
+        <div class="blog-item-category">AI 技术</div>
+        <div class="blog-item-date">2026-03-25</div>
+        <div class="blog-item-content">
+          <h2><a href="blog/multi-agent-architecture.html">多 Agent 协作架构设计：从概念到落地</a></h2>
+          <p>在 AI 应用开发中，单体 Agent 模式（一个 LLM 处理所有任务）在简单场景下表现不错，但随着任务复杂度提升，我们很快会遇到瓶颈。多 Agent 协作架构应运而生——它让不同角色的 Agent 各司其职、协同工作，从而解决更复杂的问题。…</p>
+          <div class="card-tags">
+            <span class="tag">AI Agent</span>
+            <span class="tag">12 min read</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="blog-item fade-in" data-tags="Vibe Coding" data-category="开发实践">
+        <div class="blog-item-category">开发实践</div>
+        <div class="blog-item-date">2026-03-18</div>
+        <div class="blog-item-content">
+          <h2><a href="blog/vibe-coding.html">Vibe Coding：AI 时代的全新编程范式</a></h2>
+          <p>Andrej Karpathy 在 2025 年初提出了「Vibe Coding」这个概念：你只需要描述你想要什么，AI 就能帮你把代码写出来。这不是遥不可及的科幻场景——而是正在发生的现实。…</p>
+          <div class="card-tags">
+            <span class="tag">Vibe Coding</span>
+            <span class="tag">8 min read</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="blog-item fade-in" data-tags="知识管理" data-category="效率工具">
+        <div class="blog-item-category">效率工具</div>
+        <div class="blog-item-date">2026-03-10</div>
+        <div class="blog-item-content">
+          <h2><a href="blog/ai-second-brain.html">用 AI 构建第二大脑：个人知识管理系统实践</a></h2>
+          <p>你有没有这样的体验：明明之前读过一篇很有用的文章、记过一条重要的笔记，但需要用到的时候怎么也找不到？这正是因为我们的「第一大脑」——人类大脑——天生不擅长精确检索。 解决方案是构建一个「第二大脑」——一个外部的、结构化的知识存储系统。…</p>
+          <div class="card-tags">
+            <span class="tag">知识管理</span>
+            <span class="tag">10 min read</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="blog-item fade-in" data-tags="飞书" data-category="开发实战">
+        <div class="blog-item-category">开发实战</div>
+        <div class="blog-item-date">2026-03-02</div>
+        <div class="blog-item-content">
+          <h2><a href="blog/feishu-bot.html">飞书 Bot 开发实战：从零搭建一个智能工作流</a></h2>
+          <p>飞书开放平台的生态越来越完善，通过 Bot 能力，我们可以将 AI 无缝融入日常工作流。本文记录了我从零搭建一个飞书智能 Bot 的完整过程。 项目背景 团队日常有大量重复性的信息处理工作：整理会议纪要、汇总周报、回答常见问题等。…</p>
+          <div class="card-tags">
+            <span class="tag">飞书</span>
+            <span class="tag">15 min read</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="blog-item fade-in" data-tags="Prompt" data-category="AI 技术">
+        <div class="blog-item-category">AI 技术</div>
+        <div class="blog-item-date">2026-02-22</div>
+        <div class="blog-item-content">
+          <h2><a href="blog/prompt-engineering.html">Prompt Engineering 进阶：让大模型稳定输出结构化数据</a></h2>
+          <p>在构建 AI Agent 和自动化工作流时，一个核心挑战是让 LLM 稳定、可靠地输出结构化数据。不像聊天场景中自由的文本输出，生产环境需要的是可解析、可验证的 JSON / XML / YAML。…</p>
+          <div class="card-tags">
+            <span class="tag">Prompt</span>
+            <span class="tag">9 min read</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="blog-item fade-in" data-tags="MCP" data-category="AI 技术">
+        <div class="blog-item-category">AI 技术</div>
+        <div class="blog-item-date">2026-02-14</div>
+        <div class="blog-item-content">
+          <h2><a href="blog/mcp-protocol.html">MCP 协议深度解析：AI Agent 的「USB 接口」</a></h2>
+          <p>Anthropic 在 2024 年底开源了 Model Context Protocol（MCP），这个协议迅速获得了 AI 社区的广泛关注。…</p>
+          <div class="card-tags">
+            <span class="tag">MCP</span>
+            <span class="tag">11 min read</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="blog-item fade-in" data-tags="年度总结" data-category="年度总结">
+        <div class="blog-item-category">年度总结</div>
+        <div class="blog-item-date">2026-02-05</div>
+        <div class="blog-item-content">
+          <h2><a href="blog/2025-annual-review.html">我的 2025 年度总结：一个开发者的 AI 转型之路</a></h2>
+          <p>2025 年对我来说是充满转折的一年。如果说 2024 年我还在观望 AI 浪潮，那 2025 年就是我全身心投入的一年。回顾这一年的成长，记录下来既是对自己的交代，也希望给同样在转型的朋友一些参考。…</p>
+          <div class="card-tags">
+            <span class="tag">年度总结</span>
+            <span class="tag">7 min read</span>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <p>© 2026 sherecho. Built with ❤️ and AI.</p>
+        <div class="footer-links">
+          <a href="https://github.com/sherecho" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://x.com/sherecho" target="_blank" rel="noopener">Twitter</a>
+          <a href="mailto:hello@sherecho.dev">Email</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const navToggle = document.getElementById('navToggle');
+    const navLinks  = document.getElementById('navLinks');
+    navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+
+    const observer = new IntersectionObserver(
+      (entries) => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }),
+      { threshold: 0.1 }
+    );
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    // Fallback: ensure all fade-in elements become visible after short delay
+    // (handles file:// protocol where IntersectionObserver may not fire)
+    setTimeout(() => {
+      document.querySelectorAll('.fade-in:not(.visible)').forEach(el => el.classList.add('visible'));
+    }, 150);
+
+    // Tag filter
+    document.querySelectorAll('.tag-filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.tag-filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const tag = btn.dataset.tag;
+        document.querySelectorAll('.blog-item').forEach(item => {
+          if (tag === 'all' || (item.dataset.tags || '').split(',').includes(tag)) {
+            item.style.display = '';
+          } else {
+            item.style.display = 'none';
+          }
+        });
+      });
+    });
+
+    // Category filter
+    document.querySelectorAll('.category-filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.category-filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const category = btn.dataset.category;
+        document.querySelectorAll('.blog-item').forEach(item => {
+          if (category === 'all' || item.dataset.category === category) {
+            item.style.display = '';
+          } else {
+            item.style.display = 'none';
+          }
+        });
+      });
+    });
+
+    // Support ?category= URL param
+    const params = new URLSearchParams(window.location.search);
+    const catParam = params.get('category');
+    if (catParam) {
+      const catBtn = document.querySelector(`.category-filter-btn[data-category="${catParam}"]`);
+      if (catBtn) catBtn.click();
+    }
+  </script>
+
+</body>
+</html>

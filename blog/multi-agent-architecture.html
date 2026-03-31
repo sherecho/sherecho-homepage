@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>多 Agent 协作架构设计：从概念到落地 — sherecho</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">shere<span>cho</span></a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="../index.html">首页</a></li>
+        <li><a href="../about.html">关于</a></li>
+        <li><a href="../blog.html" class="active">博客</a></li>
+        <li><a href="../index.html#projects">项目</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle" aria-label="菜单">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="container">
+    <article class="post-article fade-in">
+
+      <a href="../blog.html" class="post-back">← 返回博客列表</a>
+
+      <div class="post-meta">
+        <span class="post-date">2026-03-25</span>
+        <span class="post-read-time">12 min read</span>
+      </div>
+
+      <div class="post-category">📁 <a href="../blog.html?category=AI%20%E6%8A%80%E6%9C%AF">AI 技术</a></div>
+
+      <h1 class="post-title">多 Agent 协作架构设计：从概念到落地</h1>
+
+      <div class="post-tags"><span class="tag">AI Agent</span></div>
+
+      <div class="post-body">
+<p>在 AI 应用开发中，单体 Agent 模式（一个 LLM 处理所有任务）在简单场景下表现不错，但随着任务复杂度提升，我们很快会遇到瓶颈。多 Agent 协作架构应运而生——它让不同角色的 Agent 各司其职、协同工作，从而解决更复杂的问题。</p>
+
+<h2>为什么需要多 Agent？</h2>
+
+<p>单体 Agent 的局限主要体现在三个方面：</p>
+
+<ul><li><strong>上下文窗口压力</strong>：当任务需要大量背景知识时，单个 Agent 的 Prompt 会变得臃肿</li></ul>
+<ul><li><strong>角色冲突</strong>：一个 Agent 同时扮演「规划者」和「执行者」时，容易在不同角色之间产生混乱</li></ul>
+<ul><li><strong>错误隔离困难</strong>：一个环节出错可能导致整个链路崩溃</li></ul>
+
+<h2>核心架构模式</h2>
+
+<p>经过实践，我总结了三种常见的多 Agent 协作模式：</p>
+
+<strong>1. 串行管道模式（Pipeline）</strong>
+
+<p>Agent 按固定顺序依次处理任务，上一个的输出是下一个的输入。适合处理流程明确的场景，如内容创作流水线（调研 → 大纲 → 撰写 → 审校）。</p>
+
+<pre><code>Research Agent → Outline Agent → Writer Agent → Review Agent</code></pre>
+
+<strong>2. 主从调度模式（Orchestrator-Worker）</strong>
+
+<p>一个 Orchestrator Agent 负责任务分解和分配，多个 Worker Agent 并行执行子任务。适合需要并行处理以提高效率的场景。</p>
+
+<pre><code>Orchestrator
+  ├── Worker A (并行)
+  ├── Worker B (并行)
+  └── Worker C (并行)
+      ↓
+  Aggregator (汇总结果)</code></pre>
+
+<strong>3. 对等协作模式（Peer-to-Peer）</strong>
+
+<p>Agent 之间地位平等，通过消息传递进行协商和协作。适合需要多轮讨论、决策的场景，如代码审查中开发者和审查者的交互。</p>
+
+<h2>通信协议设计</h2>
+
+<p>Agent 之间的通信是多 Agent 系统的核心。一个好的通信协议需要考虑：</p>
+
+<ul><li><strong>消息格式标准化</strong>：统一输入输出结构，推荐使用 JSON Schema</li></ul>
+<ul><li><strong>上下文传递</strong>：每个 Agent 需要足够的上下文，但又不至于过载</li></ul>
+<ul><li><strong>超时与重试机制</strong>：防止某个 Agent 卡住导致整个流程阻塞</li></ul>
+
+<h2>错误恢复策略</h2>
+
+<p>实际项目中，Agent 出错是常态而非例外。我推荐的错误恢复策略包括：</p>
+
+<ul><li><strong>局部重试</strong>：单步失败时，让该 Agent 带着错误信息重试</li></ul>
+<ul><li><strong>降级处理</strong>：当某个 Agent 不可用时，用预设的 fallback 逻辑替代</li></ul>
+<ul><li><strong>人工介入点</strong>：在关键节点设置审批点，当置信度低于阈值时暂停并请求人类确认</li></ul>
+
+<h2>实战经验与踩坑</h2>
+
+<p>在构建一个自动化内容生产系统时，我经历了以下教训：</p>
+
+<ul><li>Prompt 的微调对输出质量影响巨大，建议每个 Agent 的 Prompt 独立迭代</li></ul>
+<ul><li>Agent 之间的信息丢失是最大的隐患，务必做好日志记录和中间状态快照</li></ul>
+<ul><li>不要过度设计——从最简单的串行模式开始，遇到瓶颈再引入更复杂的架构</li></ul>
+
+<h2>总结</h2>
+
+<p>多 Agent 架构的核心价值在于<strong>分而治之</strong>——通过合理的角色划分和协作机制，让每个 Agent 聚焦于自己最擅长的事。选择合适的架构模式、设计清晰的通信协议、建立健壮的错误恢复机制，是构建可靠多 Agent 系统的三大关键。</p>
+      </div>
+
+      <div class="post-nav">
+        <a href="vibe-coding.html" class="post-nav-link prev"><span class="post-nav-label">← 上一篇</span>Vibe Coding：AI 时代的全新编程范式</a>
+        <a href="test-hexo-like.html" class="post-nav-link next"><span class="post-nav-label">下一篇 →</span>测试文章：验证类 Hexo 博客功能</a>
+      </div>
+
+      <div class="post-footer">
+        <p>如果你觉得这篇文章有帮助，欢迎在 <a href="https://github.com/sherecho" target="_blank" rel="noopener">GitHub</a> 与我交流！</p>
+      </div>
+
+    </article>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <p>© 2026 sherecho. Built with ❤️ and AI.</p>
+        <div class="footer-links">
+          <a href="https://github.com/sherecho" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://x.com/sherecho" target="_blank" rel="noopener">Twitter</a>
+          <a href="mailto:hello@sherecho.dev">Email</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const navToggle = document.getElementById('navToggle');
+    const navLinks  = document.getElementById('navLinks');
+    navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+
+    // Ensure fade-in elements become visible
+    setTimeout(() => {
+      document.querySelectorAll('.fade-in:not(.visible)').forEach(el => el.classList.add('visible'));
+    }, 150);
+  </script>
+
+</body>
+</html>

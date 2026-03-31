@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>归档 — sherecho</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">shere<span>cho</span></a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">首页</a></li>
+        <li><a href="about.html">关于</a></li>
+        <li><a href="blog.html">博客</a></li>
+        <li><a href="archive.html" class="active">归档</a></li>
+        <li><a href="index.html#projects">项目</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle" aria-label="菜单">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="page-header fade-in">
+      <div class="label" style="font-size:.8rem;font-weight:600;color:var(--accent);text-transform:uppercase;letter-spacing:.08em;margin-bottom:12px;">归档</div>
+      <h1>文章归档</h1>
+      <p class="archive-stats">共 8 篇文章</p>
+    </div>
+  </div>
+
+  <div class="container" style="padding-top:0;">
+      <div class="archive-year">2026</div>
+      <div class="archive-month">三月</div>
+      <ul class="archive-list">
+        <li>
+          <span class="archive-date">2026-03-31</span>
+          <span class="archive-title"><a href="blog/test-hexo-like.html">测试文章：验证类 Hexo 博客功能</a></span>
+          <span class="archive-cat">开发日志</span>
+        </li>
+        <li>
+          <span class="archive-date">2026-03-25</span>
+          <span class="archive-title"><a href="blog/multi-agent-architecture.html">多 Agent 协作架构设计：从概念到落地</a></span>
+          <span class="archive-cat">AI 技术</span>
+        </li>
+        <li>
+          <span class="archive-date">2026-03-18</span>
+          <span class="archive-title"><a href="blog/vibe-coding.html">Vibe Coding：AI 时代的全新编程范式</a></span>
+          <span class="archive-cat">开发实践</span>
+        </li>
+        <li>
+          <span class="archive-date">2026-03-10</span>
+          <span class="archive-title"><a href="blog/ai-second-brain.html">用 AI 构建第二大脑：个人知识管理系统实践</a></span>
+          <span class="archive-cat">效率工具</span>
+        </li>
+        <li>
+          <span class="archive-date">2026-03-02</span>
+          <span class="archive-title"><a href="blog/feishu-bot.html">飞书 Bot 开发实战：从零搭建一个智能工作流</a></span>
+          <span class="archive-cat">开发实战</span>
+        </li>
+      </ul>
+      <div class="archive-month">二月</div>
+      <ul class="archive-list">
+        <li>
+          <span class="archive-date">2026-02-22</span>
+          <span class="archive-title"><a href="blog/prompt-engineering.html">Prompt Engineering 进阶：让大模型稳定输出结构化数据</a></span>
+          <span class="archive-cat">AI 技术</span>
+        </li>
+        <li>
+          <span class="archive-date">2026-02-14</span>
+          <span class="archive-title"><a href="blog/mcp-protocol.html">MCP 协议深度解析：AI Agent 的「USB 接口」</a></span>
+          <span class="archive-cat">AI 技术</span>
+        </li>
+        <li>
+          <span class="archive-date">2026-02-05</span>
+          <span class="archive-title"><a href="blog/2025-annual-review.html">我的 2025 年度总结：一个开发者的 AI 转型之路</a></span>
+          <span class="archive-cat">年度总结</span>
+        </li>
+      </ul>
+
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <p>© 2026 sherecho. Built with ❤️ and AI.</p>
+        <div class="footer-links">
+          <a href="https://github.com/sherecho" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://x.com/sherecho" target="_blank" rel="noopener">Twitter</a>
+          <a href="mailto:hello@sherecho.dev">Email</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const navToggle = document.getElementById('navToggle');
+    const navLinks  = document.getElementById('navLinks');
+    navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+
+    const observer = new IntersectionObserver(
+      (entries) => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }),
+      { threshold: 0.1 }
+    );
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    // Fallback: ensure all fade-in elements become visible after short delay
+    setTimeout(() => {
+      document.querySelectorAll('.fade-in:not(.visible)').forEach(el => el.classList.add('visible'));
+    }, 150);
+  </script>
+
+</body>
+</html>

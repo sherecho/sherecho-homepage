@@ -1,0 +1,12 @@
+{
+  "name": "sherecho-homepage",
+  "version": "1.0.0",
+  "private": true,
+  "description": "sherecho 的个人主页",
+  "scripts": {
+    "build": "node scripts/build.js",
+    "preview": "npx serve ."
+  },
+  "keywords": ["homepage", "blog"],
+  "license": "MIT"
+}

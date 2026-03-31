@@ -1,0 +1,77 @@
+{
+  "author": {
+    "name": "sherecho",
+    "title": "全栈开发者 / 技术博主",
+    "bio": "热爱编程与创造，专注于 Web 全栈开发与 AI 应用探索。相信技术应该为人服务，用代码连接想法与现实。",
+    "avatar": "",
+    "social": {
+      "github": "https://github.com/sherecho",
+      "twitter": "",
+      "email": ""
+    }
+  },
+  "about": {
+    "description": "我是一名全栈开发者，拥有丰富的前后端开发经验。从最初接触 HTML 和 CSS 开始，到如今熟练运用 React、Vue、Node.js 等现代技术栈构建复杂的 Web 应用，编程已经成为了我生活中不可或缺的一部分。\n\n在工作之余，我热衷于探索前沿技术，特别是 AI 与 Web 的结合领域。我相信人工智能正在重塑软件开发的方方面面，而保持学习和实践是跟上这个时代的关键。我经常在技术社区分享自己的学习心得和实践经验。\n\n我对开源文化有着深厚的认同感，积极参与开源项目，也维护着自己的开源工具。我相信好的代码应该是简洁、可读、可维护的，这也是我在日常开发中始终践行的原则。\n\n除了技术，我也关注产品设计、用户体验和内容创作。我认为一个优秀的技术人不仅要会写代码，还要能把自己的想法清晰地表达出来，让别人能理解并受益。",
+    "skills": ["JavaScript", "TypeScript", "Python", "React", "Vue.js", "Node.js", "Next.js", "Tailwind CSS", "Docker", "Git"],
+    "experience": [
+      {
+        "role": "全栈开发工程师",
+        "company": "Tech Startup",
+        "period": "2024 - 至今",
+        "description": "负责核心产品的架构设计与开发，使用 React + Node.js 技术栈，带领团队完成多个重要项目交付。"
+      },
+      {
+        "role": "前端开发工程师",
+        "company": "互联网公司",
+        "period": "2022 - 2024",
+        "description": "主导前端技术选型与架构升级，引入 TypeScript 和组件化开发流程，显著提升团队开发效率。"
+      }
+    ]
+  },
+  "posts": [
+    {
+      "title": "从零搭建 GitHub Pages 个人主页",
+      "date": "2026-03-28",
+      "tags": ["GitHub Pages", "前端", "教程"],
+      "excerpt": "手把手教你使用 GitHub Pages 搭建一个免费的个人主页，从仓库创建到自定义域名配置，一站式搞定。",
+      "url": "posts/getting-started-with-github-pages.html"
+    },
+    {
+      "title": "我的 2026 技术栈选择",
+      "date": "2026-03-25",
+      "tags": ["技术栈", "前端", "工具"],
+      "excerpt": "分享我当前使用的开发工具和技术栈，包括框架、编辑器、部署方案等，以及做出这些选择背后的思考。",
+      "url": "posts/my-tech-stack-2026.html"
+    },
+    {
+      "title": "技术人的个人品牌建设指南",
+      "date": "2026-03-20",
+      "tags": ["个人品牌", "职业发展", "写作"],
+      "excerpt": "为什么技术人需要个人品牌？如何通过写博客、参与开源、技术分享来建立自己的专业影响力？",
+      "url": "posts/building-personal-brand.html"
+    }
+  ],
+  "projects": [
+    {
+      "name": "个人主页",
+      "description": "基于 GitHub Pages 搭建的个人主页，展示项目、文章和个人信息，纯静态站点，部署简单。",
+      "tech": ["HTML", "CSS", "JavaScript"],
+      "url": "https://sherecho.github.io",
+      "github": "https://github.com/sherecho/sherecho-homepage"
+    },
+    {
+      "name": "DevToolKit",
+      "description": "开发者常用工具集合，包含代码格式化、JSON 处理、正则测试等实用功能。",
+      "tech": ["Vue.js", "TypeScript", "Vite"],
+      "url": "#",
+      "github": "https://github.com/sherecho/devtoolkit"
+    },
+    {
+      "name": "AI Chat Assistant",
+      "description": "基于大语言模型的智能对话助手，支持多轮对话、上下文记忆和插件扩展。",
+      "tech": ["React", "Node.js", "OpenAI API"],
+      "url": "#",
+      "github": "https://github.com/sherecho/ai-chat"
+    }
+  ]
+}
